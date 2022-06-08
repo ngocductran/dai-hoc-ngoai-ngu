@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Routing\Route as RoutingRoute;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,9 +15,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home.test');
 });
 
 Route::get('/test', function () {
     return view('admin.index');
+});
+
+Route::get('/list', function () {
+    return view('admin.dashboard.room.list');
+});
+
+
+Route::group(['prefix' => 'admin'], function() {
+    //
 });

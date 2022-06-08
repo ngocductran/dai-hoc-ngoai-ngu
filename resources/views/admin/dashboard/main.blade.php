@@ -9,7 +9,7 @@
                             <div>Thêm</div>
                         </div>
                         <div class="card-body">
-                            Main
+                            @yield('content')
                         </div>
                     </div>
                 </div>
