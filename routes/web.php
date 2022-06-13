@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Routing\Route as RoutingRoute;
 use Illuminate\Routing\RouteGroup;
 
@@ -18,7 +19,7 @@ use Illuminate\Routing\RouteGroup;
 */
 
 Route::get('/', function () {
-    return view('home.test');
+    return view('home.home');
 });
 
 Route::get('/dashboard', function () {
@@ -29,6 +30,10 @@ Route::get('/list', function () {
     return view('admin.dashboard.room.create');
 });
 
+Route::get('login',[HomeController::class,'getLogin'])->name('get.login');
+Route::post('login',[HomeController::class,'postLogin']);
+Route::get('register',[HomeController::class,'getRegister']);
+Route::post('register',[HomeController::class,'postRegister']);
 
 Route::group(['prefix' => 'admin'], function() {
 
