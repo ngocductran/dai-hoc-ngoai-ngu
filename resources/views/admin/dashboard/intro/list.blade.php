@@ -1,30 +1,16 @@
 @extends('admin.index')
-@section('title','Danh sách phòng')
+@section('title','Danh sách giới thiệu')
 @push('css')
     <link href="https://cdn.datatables.net/1.15/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
-    <style>
-        .table-plus img:hover {
-            transform: scale(5);
-                /* Safari & Google Chrome */
-                -webkit-transform: scale(5);
-                /* Mozilla Firefox */
-                -moz-transform: scale(5); 
-                /* Opera */
-                -o-transform: scale(5);
-                /* IE 9 */
-                -ms-transform: scale(5);
-            cursor: pointer; 
-        }
-    </style>
 @endpush
 @section('content')
 <div class="pd-20 card-box mb-30">
     <div class="clearfix mb-20">
         <div class="pull-left">
-            <h4 class="text-blue h4">Quản lý phòng ban</h4>
+            <h4 class="text-blue h4">Quản lý giới thiệu</h4>
         </div>
         <div class="pull-right">
-            <a href="{{route('get.room.create')}}" class="btn btn-success btn-sm"><i class="fa fa-plus"></i> Thêm</a>
+            <a href="{{route('get.intro.create')}}" class="btn btn-success btn-sm"><i class="fa fa-plus"></i> Thêm</a>
         </div>
     </div>  
     <hr>
@@ -38,23 +24,23 @@
             <thead class="thead-dark">
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Tên phòng</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Phone</th>
-                    <th scope="col">Website</th>
+                    <th scope="col">Giới thiệu</th>
+                    <th scope="col">Tác giả</th>
+                    <th scope="col">Nội dung</th>
+                    <th scope="col">Ảnh</th>
                     <th scope="col">Chức năng</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($rooms as $room)
+                @foreach ($intros as $intro)
                     <tr>
-                        <td>{{$room->id}}</td>
-                        <td>{{$room->name}}</td>
-                        <td>{{$room->email }}</td>
-                        <td>{{$room->phone}}</td>
+                        <td>{{$intro->id}}</td>
+                        <td>{{$intro->name}}</td>
+                        <td>{{$intro->user->name }}</td>
+                        <td>{{$intro->file}}</td>
                         
                         <td class="table-plus">
-                            <img src="{{asset($room->avatar)}}" width="70" height="70" alt="">
+                            <img src="{{asset($intro->file)}}" width="70" height="70" alt="">
                         </td>
                         <td class="text-center">
                             <div class="dropdown">
@@ -63,8 +49,8 @@
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
                                     <a class="dropdown-item" href="#"><i class="dw dw-eye"></i> View</a>
-                                    <a class="dropdown-item" href="{{route('get.room.edit',$room->id)}}"><i class="dw dw-edit2"></i> Edit</a>
-                                    <a class="dropdown-item" href="{{route('get.room.delete',$room->id)}}"><i class="dw dw-delete-3"></i> Delete</a>
+                                    <a class="dropdown-item" href="{{route('get.intro.edit',$intro->id)}}"><i class="dw dw-edit2"></i> Edit</a>
+                                    <a class="dropdown-item" href="{{route('get.intro.delete',$intro->id)}}"><i class="dw dw-delete-3"></i> Delete</a>
                                 </div>
                             </div>
                         </td>

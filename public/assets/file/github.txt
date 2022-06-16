@@ -1,0 +1,14 @@
+git remove -v
+git init
+git remote add origin https://github.com/ngocductran/test-code.git
+git add .
+git commit -m "push code"
+git push -u origin main
+git branch -m main
+git push -u origin main
+
+
+
+git add .
+git commit -m "update code"
+git push -u origin

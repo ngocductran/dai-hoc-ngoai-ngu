@@ -18,7 +18,7 @@ class CreateTableDocumentsTable extends Migration
             $table->string('name');
             $table->string('content')->nullable();
             $table->string('file');
-            $table->integer('views');
+            $table->integer('views')->default(0);
             
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
