@@ -179,3 +179,54 @@ body{
     color: #aaa;
     font-size: 20px;
 }
+
+/* footer */
+
+.footer__customer{
+	width: calc(100%);
+}
+.footer__top{
+	width: 100%;
+	height: 350px;
+	background-color: #0092d1;
+}
+.footer__border{
+	text-align: center;
+	width: 70%;
+	border-radius: 30px;
+	border-bottom: gray solid 2px;
+	margin-left: 200px;
+	margin-top: 20px;
+}
+.footer__bottom{
+	width: 100%;
+	text-align: center;
+	background-color: #0092d1;
+}
+.footer__top img{
+	width: 40%;
+	height: auto;
+}
+.footer__top .footer__title__1{
+	color: white;
+	font-size: 20px;
+	font-weight: 600;
+}
+.footer__top .footer__title__2{
+	color: white;
+	font-size: 16px;
+}
+.footer__top .col-md-4{
+	text-align: center;
+	margin-top: 80px;
+
+}
+.map__customer{
+	width: 75%;
+	height: 220px;
+}
+.footer__bottom span{
+	text-align: center;
+	color: white;
+	font-size: 16px;
+}
